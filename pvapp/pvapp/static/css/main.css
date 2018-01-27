@@ -1,0 +1,226 @@
+html, body {
+    min-height: 100% !important;
+    height: 100%;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  padding-top: 70px;
+  padding-bottom: 70px;
+  color: #444;
+}
+
+/* Set display:none for CRSF cookie */
+label[for="newjudge-csrf_token"], label[for="newscore-csrf_token"], label[for="newmember-csrf_token"], label[for="firstmember-csrf_token"] {
+  display:none;
+}
+
+.navbar-right {
+  /*width: 5%;*/
+  padding: 10px 0;
+}
+
+form.navbar-right, ul.navbar-right.navbar-nav {
+  margin-right: 15px!important;
+  padding: 0;
+}
+
+@media (min-width: 1200px) {
+    .container{
+        max-width: 970px;
+    }
+}
+
+img.sponsorpic, .mentorship, img.mentorpic {
+  width:100%;
+}
+
+.mentorpic-container {
+  position: relative;
+  width: 100%;
+  padding-bottom: 100%;
+}
+
+.sponsorpic-container {
+  height: 100px;
+  margin: 10px;
+  line-height: 100px;
+}
+
+
+img.mentorpic {
+  position: absolute;
+  height:100%;
+}
+
+.pastwinnerpic-container {
+  width: 100%;
+}
+
+img.pastwinnerpic {
+  width: 100%;
+}
+
+.mentorname, .mentorbio {
+  text-align: center;
+}
+
+#home, #about, #pastfinalists, #mentors {
+  padding:60px 0;
+  /*margin-top: -60px;*/
+  background: no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+#mentors {
+  padding: 0;
+}
+
+#sponsors, #frequentlyasked, #mentorship{
+  padding:60px 0;
+  /*margin-top: -60px;*/
+}
+@media (min-width: 760px) {
+  #home{
+    min-height:100% !important;
+    height: 100%;
+  }  
+}
+
+
+#home {
+  background-image: url('../img/home-bg-15.jpg');
+  background-position: 0px -75px;
+  padding-top: 50px;
+  margin-top:-10px;
+}
+
+#home .jumbotron {
+  background: rgba(29, 142, 118, .8);
+  color: #fff;
+  margin-top: -50px;
+  text-align:center;
+}
+.jumbotron .btn-primary {
+  margin-top: 10px;
+}
+
+#about {
+  position:relative;
+  /*height: 2100px;*/
+  /* background-image:url('../img/sky.jpg');*/
+  background: #2c3e50;
+  color: #fff;
+}
+
+#pastfinalists {
+  position:relative;
+}
+
+#mentorship {
+  position:relative;
+  /*height: 2100px;*/
+  /* background-image:url('../img/sky.jpg');*/
+  background: #2c3e50;
+  color: #fff;
+}
+
+.frontpagedesc, .frontpageheader {
+  text-align: center;
+}
+
+.frontpagewrapper {
+  margin-bottom:50px;
+}
+
+.past, .mentorship {
+  color: white;
+  background-color: rgba(29,142,118,1);
+}
+
+.howitworks {
+  background-color: #1D8E76;
+}
+
+
+#process {
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  width: 80%;
+  height: 0;
+  padding-top:5%;
+  padding-bottom:40%;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: contain;
+  background-image: url('../img/pv_process.png');
+}
+
+#pastfinalists {
+  background-image: url('../img/penngineering.jpg');
+}
+
+#sponsors {
+  background-color: #fff;
+  color: rgba(29, 142, 118, 1);
+}
+
+#sponsors a {
+  color: rgba(29, 142, 118, 1);
+  text-decoration: underline;
+}
+
+#twitter-widget-0 {
+  margin-top: 12px;
+}
+
+.navbar-brand {
+  font-weight: 900;
+  font-size:24px;
+}
+
+#pv-title {
+  color: rgba(29,142,118,1);
+}
+
+#pv-title-white, #pv-title-white:hover {
+  color: white;
+}
+
+.social i{
+  padding:13px;
+}
+
+.navbar-default {
+  border: none;
+}
+
+.navbar-default .navbar-nav>.active>a,
+ .navbar-default .navbar-nav>.active>a:hover,
+  .navbar-default .navbar-nav>.active>a:focus {
+  background-color: rgba(29,142,118,1);
+}
+
+#about btn-primary, #about btn-lg, #about btn{
+  background-color: #18bc9c;
+}
+
+#howitworks {
+  padding: 60px 0 0 0 ;
+}
+.howitworks { 
+  margin-bottom: 60px;
+}
+.announcement {
+  background-color: #2c3e50;
+  border-radius: 6px;
+  padding:5px;
+}
+.announcement strong{
+  color: rgba(29, 142, 118, 1);
+}

@@ -1,0 +1,38 @@
+{% extends "layout.html" %}
+{% block content %}
+  <div class="jumbo">
+    <h2> Welcome to the Admin Panel.</h2>
+    {% if projects %}
+      <ol>
+        {% for p in projects %}
+          	{% if p.phaseone %}
+            	<li>
+			<a href="{{ url_for('submission', filename=p.phaseone)}}">
+				{{ p.projectname}}: Round 1 Submission
+			</a>
+		</li>
+		<p>
+			{{p.description}}
+		</p>
+		<ul>
+            		{% for member in p.members.all() %}
+                    	<li>{{ member.name }}, {{member.year}}, 
+                        	{{ (member.education)|join(", ") }}, {{ member.email }}
+                    	</li>
+            		{% endfor %}
+            	</ul>  
+        	{% else %}
+          	  <li>{{ p.projectname }} (has not submitted) </li>
+		  <ul>
+			{% for member in p.members.all() %}
+				<li>{{ member.name}}, {{member.year}}, {{ (member.eduction)|join(", ") }}, {{member.email}}
+			{% endfor %}
+		  </ul>
+          {% endif %}
+        {% endfor %}
+      </ol>
+    {% else %}
+      <h3>No projects submitted yet</h3>
+    {% endif %}
+  </div>
+{% endblock %}

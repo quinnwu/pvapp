@@ -1,0 +1,25 @@
+{% extends "layout.html" %}
+ 
+{% block content %}
+  <h2>Round 2 Submission</h2>
+  <p>The submission for the Semifinal Round is a video pitch from 3-5 minutes long that demos your progress and displays your team's pitching skills. It includes the following requirements:</p> 
+<ol>
+	<li>Basic overview of problem space (need for product) and of idea</li>
+	<li>Video demo of product at current stage of development (video can refer to an animation, demo of a physical prototype, or other proof of concept method)</li>
+	<li>Discussion of progress to date (optional: discussion of progress since end of First Round, including mentors' contributions and use of funding)</li>
+	<li>How $5,000 in grand prize money will be used (breakdown and timeline of when the money will be spent over the next 6 months)</li>
+</ol>
+<p> Members must be filmed, but if it is appropriate, footage can be shown of the product (for example, with voiceovers). In other words, the video need not be filmed all in one sitting. Teams are granted creative license about where/how they want to film. </p>
+
+  {% for message in form.videolink.errors %}
+    <div class="flash">{{ message }}</div>
+  {% endfor %}
+  <form role="form" action="/roundtwo/" method="POST" enctype="multipart/form-data">
+    <div class="form-group"> 
+      {{ form.videolink.label }}
+      {{ form.videolink(class_="form-control") }}
+    </div>
+      {{ form.hidden_tag() }}
+      <button type="submit" class="btn btn-default" id="submit" name="submit" type="submit" value="Send">Submit</button>
+  </form>
+{% endblock %}

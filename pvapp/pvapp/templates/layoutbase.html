@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Pennvention</title>    
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootswatch/3.0.3/flatly/bootstrap.min.css">
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+    <link rel="icon" type="img/icon" href="{{ url_for('static', filename='img/pv.ico') }}">
+    <!-- JS: JQuery and Bootstrap -->
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery-scrollTo/1.4.9/jquery.scrollTo.min.js"></script>
+    <script>
+    $(function() {
+        $('#bs-navbar').bind('click', 'ul li a', function(event) {
+            event.preventDefault();
+            $.scrollTo(event.target.hash, 250);
+        });
+    });
+    </script>
+    <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+  <div id="fb-root"></div>
+  <script>(function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=573812696015465";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));</script>
+  </head>
+  <body data-spy="scroll" data-target="#bs-navbar">
+   
+    <header>
+      <nav class="navbar navbar-fixed-top navbar-default" role="navigation">
+        <div class="container">
+          <div class="row">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" href="{{ url_for('home') }}"><i><span id="pv-title">PENN</span><span id="pv-title-white">VENTION</span></i></a>
+            </div><!-- .navbar-header -->
+	      <div id="bs-navbar">
+                <ul class="nav navbar-nav hidden-sm hidden-xs">
+                  {% if home %}
+                  <li><a href="#about">About</a></li>
+		  <li><a href="#frequentlyasked">FAQ</a></li>
+                  <li><a href="#pastfinalists">Past Winners</a></li>
+                  <li><a href="#mentors">Mentors</a></li>
+		  <li><a href="#sponsors">Sponsors</a></li>
+                  {% endif %} 
+                </ul>
+	      </div>
+            <div  class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+              <ul class="nav navbar-nav">
+                {% if ('project' in session) and not home %}
+                <li class="dropdown">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown">Actions<b class="caret"></b></a>
+                  <ul class="dropdown-menu">
+                      <li><a href="{{ url_for('addmember') }}">Add Member</a></li>
+                      <li><a href="{{ url_for('phaseone') }}">Round 1 Submission</a></li>
+		{% if ('semifinalist' in session) %}
+		      <li><a href="{{ url_for('roundtwo') }}">Round 2 Submission</a></li>
+		{% endif %}
+		{% if ('semifinalist' in session) %}
+		      <li><a href="{{ url_for('finalround') }}">Final Round Submission</a></li>
+		{% endif %}
+                  </ul>
+                </li>
+                {% else %}
+                {% endif %}
+              </ul>
+              {% if ('project' in session) or ('judge' in session) or ('admin' in session) %}
+              <ul class="nav navbar-nav navbar-right">
+                <li><a href="{{ url_for('profile') }}">Profile</a></li>
+                <li><a href="{{ url_for('signout') }}">Sign Out</a></li>
+              </ul>
+              {% else %}
+                <form class="navbar-form navbar-right" action="{{ url_for('signin') }}" method=post>
+                {% if home %}
+                  <div class="social">
+  		              <a href="https://facebook.com/pennvention"><i class="fa fa-facebook fa-lg"></i></a>
+  		              &nbsp;
+  		              <a href="https://twitter.com/pennvention"><i class="fa fa-twitter fa-lg"></i></a>
+                  </div>
+                {% endif %}
+              {% if login %}
+                  {{ login.hidden_tag() }}
+                  <div class="form-group">             
+                    {{ login.email.label(class_="sr-only") }}
+                    {{ login.email(class_="form-control", placeholder="Email") }}
+                  </div>      
+                  <div class="form-group">             
+                    {{ login.password.label(class_="sr-only") }}
+                    {{ login.password(class_="form-control", placeholder="Password") }}
+                  </div>      
+                  <button type="submit" class="btn btn-default" id="submit" name="submit" type="submit" value="Send">Login</button>
+              {% endif %}
+                </form>
+              {% endif %}
+            </div><!-- /.navbar-collapse -->
+          </div>
+        </div>
+      </nav>
+    </header>
+   
+    {% block template %}
+    {% endblock %}
+     
+  </body>
+</html>

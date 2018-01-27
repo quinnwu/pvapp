@@ -1,0 +1,24 @@
+{% extends "layout.html" %}
+ 
+{% block content %}
+  <h2>Final Round Submission</h2>
+  <p>The submission is a live pitch that closely mirrors your Round 2 pitch. It will be no longer than 10 minutes - it includes the following: </p>
+<ol>
+  <li> Basic overview of problem space (need for product) and of idea</li> 
+  <li> Physical/video demo of product at current stage in development </li>
+  <li> Discussion of progress since March (what was developed and how; mentors should be credited for any and all assistance) </li> 
+  <li> How $5000 Grand Prize money would be used (breakdown and timeline of when the money will be spent </li> 
+</ol>
+
+  {% for message in form.presentation.errors %}
+    <div class="flash">{{ message }}</div>
+  {% endfor %}
+  <form role="form" action="/finalround/" method="POST" enctype="multipart/form-data">
+    <div class="form-group"> 
+      {{ form.presentation.label }}
+      {{ form.presentation(class_="form-control") }}
+    </div>
+      {{ form.hidden_tag() }}
+      <button type="submit" class="btn btn-default" id="submit" name="submit" type="submit" value="Send">Submit</button>
+  </form>
+{% endblock %}

@@ -1,0 +1,48 @@
+{% extends "layout.html" %}
+{% block content %}
+  <div class="jumbo">
+    <h1>{{ p.projectname }}</h2>
+    <p>{{ p.description }} </p>
+    <hr />
+    <h3>Members</h3>
+    <ul>
+	{% for member in members %}
+        <li>{{ member.name }}, 
+            {{ (member.education)|join(", ") }}
+        </li>
+	{% endfor %}
+    </ul> 
+    <hr />
+    <h3>Submissions</h3>
+    {% if p.phaseone %}
+    <h4>First Round Submission: <a href="{{ url_for('submission', filename=p.phaseone)}}">{{ p.phaseone }}</a></h4>
+      {% if comments %}
+      <p><b> Judge Comments </b></p>
+        <ul>
+          {% for comment in comments %}
+          <li>{{ comment }} </li>
+	  {% endfor %}
+        </ul> 
+      {% endif %}
+    {% else %}
+    <h4><a href="{{ url_for('phaseone')}}">Submit your Round 1 Presentation</a></h4>
+    {% endif %}
+    {% if p.semifinalist >= 2 %}
+    <BR />
+    {% if p.secondround %}
+    <h4>Second Round Submission: <a href="{{ p.secondround }}">{{ p.secondround }}</a></h4>
+      {% if secondroundcomments %}
+      <p><b> Judge Comments </b></p>
+        <ul>
+          {% for comment in secondroundcomments %}
+          <li>{{ comment }} </li>
+	  {% endfor %}
+        </ul> 
+      {% endif %}
+    {% else %}
+    	<h4><a href="{{ url_for('roundtwo')}}">Submit your Round 2 Presentation</a></h4>
+    {% endif %}
+    {% endif %}
+    <hr />
+  </div>
+{% endblock %}

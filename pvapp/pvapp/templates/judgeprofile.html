@@ -1,0 +1,27 @@
+{% extends "layout.html" %}
+{% block content %}
+  <div class="jumbo">
+    <h2> Welcome, {{ j.name }}.</h2>
+    New to judging? Read the <a href="{{ url_for('static', filename="Judging_Semifinalists_PV.pdf") }}">judging rubic worksheet</a> to help guide you through the process. 
+    <hr>
+    {% if not j.first_round_subs_in_current_cycle and not j.second_round_subs_in_current_cycle %}
+      <h4> No projects for your review just yet. Please stay tuned! </h4>
+    {% endif %}
+    {% if j.second_round_subs_in_current_cycle %}
+    <h3>Second Round</h3>
+    <ul>
+      {% for p in j.second_round_subs_in_current_cycle %}
+            <li>{{ p.projectname }} <a href="{{ url_for('judge2nd', project_id=p.id)}}">Judge Project</a></li>
+      {% endfor %}
+    </ul> 
+    {% endif %}
+    {% if j.first_round_subs_in_current_cycle %}
+    <h3>First Round</h3>
+    <ul>
+      {% for p in j.first_round_subs_in_current_cycle %}
+            <li>{{ p.projectname }} <a href="{{ url_for('judge_project', project_id=p.id)}}">Judge Project</a></li>
+      {% endfor %}
+    </ul> 
+    {% endif %}
+  </div>
+{% endblock %}

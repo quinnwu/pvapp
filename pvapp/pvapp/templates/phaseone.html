@@ -1,0 +1,29 @@
+{% extends "layout.html" %}
+ 
+{% block content %}
+  <h2>Round 1 Submission</h2>
+  <p>The submission for Round 1 is a slide deck spanning at most 5 slides (excluding the title slide) that outlines your technical idea. A good presentation will contain the following:
+<ul>
+  <li> Information about the team, their project roles, and any mentors/advisors to the project
+  <li> Explanation of the problematic issue, and any relevant statistics about market size (if a commercial idea), individuals affected (if a civic/non-profit innovation), or any metrics you think are appropriate
+  <li> Technical Explanation of idea and footnotes/references if applicable 
+  <li> Timeline for next 6 months outlining the next steps to produce a Minimal Viable Product, and relevant costs
+</ul>
+</p>
+
+  {% for message in form.presentation.errors %}
+    <div class="flash">{{ message }}</div>
+  {% endfor %}
+  {% if open %}
+    <form role="form" action="/phaseone/" method="POST" enctype="multipart/form-data">
+      <div class="form-group"> 
+        {{ form.presentation.label }}
+        {{ form.presentation(class_="form-control") }}
+      </div>
+        {{ form.hidden_tag() }}
+        <button type="submit" class="btn btn-default" id="submit" name="submit" type="submit" value="Send">Submit</button>
+    </form>
+  {% else %}
+    <h2> Submissions for Round 1 are not available at this time. </h2>
+  {% endif %}
+{% endblock %}

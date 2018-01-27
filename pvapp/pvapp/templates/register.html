@@ -1,0 +1,40 @@
+{% extends "layout.html" %}
+ 
+{% block content %}
+  <h2>Register Your Team</h2>
+  {% if form.projectname.errors %}
+    <div class="alert alert-danger fade in"><button class="close" data-dismiss="alert" href="#" aria-hidden="true">&times;</button>{{ form.projectname.errors|join(', ') }}</div>
+  {% endif %}
+  {% if form.description.errors %}
+    <div class="alert alert-danger fade in"><button class="close" data-dismiss="alert" href="#" aria-hidden="true">&times;</button>{{ form.description.errors|join(', ')}}</div>
+  {% endif %}
+  {% for errors in form.firstmember.errors.itervalues() %}
+    <div class="alert alert-danger fade in"><button class="close" data-dismiss="alert" href="#" aria-hidden="true">&times;</button>{{errors|join(', ') }}</div>
+  {% endfor %}
+  
+  <form role="form" action="{{ url_for('register') }}" method=post>
+    {{ form.hidden_tag() }}
+    <div class="form-group"> 
+      {{ form.projectname.label }}
+      {{ form.projectname(class_="form-control") }}
+    </div>   
+    <div class="form-group"> 
+      {{ form.description.label }}
+      {% if form.description.description %}
+        ({{ form.description.description }})
+      {% endif %}
+      {{ form.description(class_="form-control") }}
+    </div>   
+    {% for subfield in form.firstmember %}
+    <div class="form-group"> 
+      {{ subfield.label }} 
+      {% if subfield.description %}
+        ({{ subfield.description }})
+      {% endif %}
+      {{ subfield(class_="form-control") }}
+    </div>  
+    {% endfor %} 
+     
+    <button type="submit" class="btn btn-default" id="submit" name="submit" type="submit" value="Send">Register</button>
+  </form>
+{% endblock %}

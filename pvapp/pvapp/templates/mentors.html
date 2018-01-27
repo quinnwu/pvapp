@@ -1,0 +1,25 @@
+{% extends "layout.html" %}
+{% block content %}
+  <div class="jumbo">
+    <h2> Mentors</h2>
+    {% if mentors %}
+    <div class="row">
+ {% for mentor in mentors %}
+      <div class="mentor col-md-3 col-sm-6">
+        <div class="mentorpic-container">
+          <img class="mentorpic" src='{{url_for('static', filename=mentor.photo)}}'> </img>
+        </div>
+        <h3 class="mentorname"> {{mentor.name}} </b></h3>
+        <p class="mentorbio"> {{mentor.position}}, {{mentor.organization}} </p>
+      </div>
+ {% endfor %}
+    </div><!-- .row -->
+ {% endif %}
+    <div class="row">
+      <a href="{{url_for('addmentor')}}">
+        <button class="btn btn-default">Add Mentor Photo</button>
+      </a>
+    </div>
+  </div>
+
+{% endblock %}
