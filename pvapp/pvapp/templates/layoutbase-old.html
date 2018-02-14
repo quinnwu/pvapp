@@ -48,12 +48,13 @@
             </div><!-- .navbar-header -->
 	      <div id="bs-navbar">
                 <ul class="nav navbar-nav hidden-sm hidden-xs">
-                  <li><a href="#about">News</a></li>
-		  <li><a href="#howitworks">About</a></li>
-                  <li><a href="#frequentlyasked">FAQ</a></li>
-		  <li><a href="#pastfinalists">Winners</a></li>
-                  <li><a href="#mentorship">Mentors</a></li>
+                  {% if home %}
+                  <li><a href="#about">About</a></li>
+		  <li><a href="#frequentlyasked">FAQ</a></li>
+                  <li><a href="#pastfinalists">Past Winners</a></li>
+                  <li><a href="#mentors">Mentors</a></li>
 		  <li><a href="#sponsors">Sponsors</a></li>
+                  {% endif %} 
                 </ul>
 	      </div>
             <div  class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">

@@ -8,15 +8,16 @@
 		<h1><i><span id="pv-title">PENN</span><span id="pv-title-white">VENTION</span></i></h1>
           </div>
 <br>
-           <p class="row">Applications for our 2018 competition are now open! Submit your application by February 18th!</p> 
+           <p class="row">Applications for our 2018 competition are open - apply by February 24th!</p> 
            <p class="row">
-            <div class="col-lg-2 col-md-4 col-sm-4 col-md-offset-5 col-sm-offset-5 col-lg-offset-5">
-              <div class="row">
-		<!--<a href="{{url_for('register')}}" class="btn btn-primary btn-block btn-lg">REGISTER & APPLY</a>-->
+            <div class="col-lg-4 col-md-4 col-sm-4 col-md-offset-4 col-sm-offset-4 col-lg-offset-4">
+             <!-- <div class="col-lg-2 col-md-4 col-sm-4 col-md-offset-2 col-sm-offset-2 col-lg-offset-2">-->
+		<div class="row">
+		<!--<a href="{{url_for('register')}}" class="btn btn-primary btn-block btn-lg">REGISTER</a>-->
 		<a href="https://pennvention.typeform.com/to/z0wtXi" class="btn btn-primary btn-block btn-lg">APPLY HERE!</a>
               </div>
             </div>
-          <!-- <div class="col-lg-4 col-md-4 col-sm-4 col-md-offset-2 col-sm-offset-2 col-lg-offset-2">
+          <!--<div class="col-lg-4 col-md-4 col-sm-4 col-md-offset-2 col-sm-offset-2 col-lg-offset-2">
               <div class="row">
                 <a href="{{url_for('login')}}" class="btn btn-primary btn-block btn-lg">LOGIN</a>
 		<a href="#" class="btn btn-primary btn-block btn-lg">LOGIN</a>
@@ -30,9 +31,14 @@
   <section id="about" data-type="background"  data-speed="10">
     <div class="container">
       <div class="frontpagewrapper">
-        <h1 class="frontpageheader">Meet the 2016 Winners & Finalists.</h1>
-           <h4 class="frontpagedesc">8 finalist teams have braved the most competitive and rigorous Pennvention ever to compete for the top prize. Click below to see the results and learn more about the teams!</h4> 
-           <h4 class="frontpagedesc"><a href="news" class="btn btn-primary btn-lg" style="background-color: #18bc9c;">2016 WINNERS</a></h4>
+        <h1 class="frontpageheader">Check out our Promo Video!</h1>
+           <!--<h4 class="frontpagedesc">
+		RSVP to our <a href="https://www.facebook.com/events/1700944419971661/">Facebook Event</a> for updates! Check out our promo video below first!
+		</h4>-->
+	<p align="center">
+	<iframe width="560" height="315" src="https://www.youtube.com/embed/FNPfGfuvQus" frameborder="0" allow="autoplay;encrypted-media" allowfullscreen></iframe> 
+        </p>
+	   <!--<h4 class="frontpagedesc"><a href="news" class="btn btn-primary btn-lg" style="background-color: #18bc9c;">2016 WINNERS</a></h4>-->
         <hr>
         <h1 class="frontpageheader" id="howitworks"> How it Works </h1>
         <h4 class="frontpagedesc"> Build the next big thing in tech. The sky really is the limit. </h4>
@@ -49,11 +55,43 @@
       <div class="frontpagewrapper">
         <h1 class="frontpageheader"> Frequently Asked Questions</h1>
       </div>
-      {% for faq in faqs %}
-        <h4><b> {{ faq.question }} </b></h4>
-        <h4> {{ faq.answer }} </h4>
-        <hr>
-      {% endfor %}
+      <h4><b>What is Pennvention?</b></h4>
+      <h4>Pennvention is Penn's premier tech innovation competition held each spring since its inaugural event in 2005 and prides itself on being the sole entrepreneurship competition for Penn students with a primary focus on the technological innovation. Over the course of the competition, competitors will pitch their idea, develop an MVP or a new product feature, receive help from outstanding mentors, and potentialy win over $20,000 in prizes.</h4>
+      <hr>
+
+      <h4><b>How does Pennvention work?</b></h4>
+      <h4>The competition itself spans from February till April. First round applications are typically due by mid-February, where teams are expected to submit a five-slide deck. A select number of teams will be selected as semifinalists and paired with mentors by need and expertise as well as provided with special workshops and development resources from the Weiss Tech House. Semifinalists will then have several weeks to develop or improve their product and submit a five-minute video pitch by mid-March. Eight finalists will then be chosen to pitch live "shark-tank style" to a panel of esteemed judges in early April and winners will be announced the night of the final round that will be open to the general public.
+      </h4>
+      <hr>
+
+      <h4><b>Who can apply to Pennvention?</b></h4>
+      <h4>Pennvention is open to any teams that have at least one currently enrolled and full-time Penn undergraduate or graduate student in any school and discipline. Unfortunately, teams that do not satisfy this requirement will not be considered to move on past the first round.
+      </h4>
+      <hr>
+
+      <h4><b>I just applied to the Wharton Startup Challenge. Can I submit my idea to Pennvention as well?</b></h4>
+      <h4>Of course! We're always looking to see more ideas from Penn's entrepreneurial community, however keep in mind that this is not your typical business plan competition. Your team's idea or product must have some sort of technical innovation that has not been widely implemented in existing products - business model innovations are certainly encouraged as well - or your submission won't be considered for subsequent rounds of Pennvention.
+      </h4>
+      <hr>
+
+      <h4><b>I hacked together an amazing app at PennApps! Can I submit it to Pennvention?</b></h4>
+      <h4>Pennvention welcomes any software-based project (web, mobile, etc.), but note that this is not a hackathon. You won't be judged on how you creatively used a bunch of APIs and developer tools, but rather on if your app has some kind of innovation that can't be easily duplicated and integrated elsewhere. For example, do you use a unique algorithm or integrate hardware into your app? Or maybe your app is an analytics-based platform that has a new method of analyzing data? In addition, you should ask yourself is this an app that consumers or businesses would use and have a purpose for - is there a market need?
+      </h4>
+      <hr>
+
+      <h4><b>I noticed the past winners tend to be hardware-based. Am I at a disadvantage if my product is not?</b></h4>
+      <h4>Nope! We've had plenty of finalists who did not have a hardware-based product. Pennvention has received many submissions over the years from varying areas including software, hardware, biotech, energy, consumer retail, and more. Again, your project will be reviewed on the merit of the innovation and not the category.
+      </h4>
+      <hr>
+
+      <h4><b>My idea is for social impact and not for-profit. Will my submission even be considered?</b></h4>
+      <h4>Yes! Pennvention has accepted non-profit ideas in the past, some which have done quite well in the competition along with the for-profit projects. However, because your project does not have a profitable business model, you must explain how your idea will be sustainable and scalable in order to advance.
+      </h4>
+      <hr>     
+
+	<h4><b>What should I do if I have additional questions?</b></h4>
+	<h4>Shoot us an email at <a href="mailto:pennvention@gmail.com">pennvention@gmail.com</a> and we'll get back to you as soon we can!</h4>
+	<hr>
     </div>
   </section> 
 
@@ -63,20 +101,80 @@
       <h1 class="frontpageheader"> Past Winners</h1>
       <h4 class="frontpagedesc"> These teams developed incredible products. You can too.</h4>
     </div><!-- .container .past -->
- {% if pastwinners %}
-    <div class="row">
- {% for pastwinner in pastwinners %}
-      <div class="mentor col-md-3 col-sm-6">
-        <div class="pastwinnerpic-container">
-          <img class="pastwinnerpic" src='{{url_for('static', filename=pastwinner.photo)}}'> </img>
-        </div><!-- .pastwinnerpic-container-->
-        <h3 class="mentorname"> {{pastwinner.projectname}} </b></h3>
-        <h4 class="mentorname"> {{pastwinner.year}} </h4>
-        <p class="mentorbio"> {{pastwinner.info}}</p>
-      </div><!-- .mentor .col-md-4 .col-sm-6 -->
- {% endfor %}
-    </div><!-- .row -->
- {% endif %}
+	<div class = "row">
+	<div class="mentor col-md-4 col-sm-6">
+	<div class="pastwinnerpic-container">
+	<img class="pastwinnerpic" src="../static/img/pinch.jpg">
+	</div>
+	<h3 class="mentorname">pinch.</b></h3>
+	<h4 class="mentorname">2017</h4>
+	<p class="mentorbio">Revolutionary in-store machine that lets you buy the exact amount of spices.</p>
+	</div>
+	
+	<div class="mentor col-md-4 col-sm-6">
+	<div class="pastwinnerpic-container">
+	<img class="pastwinnerpic" src="../static/img/biocell.jpg">
+	</div>
+	<h3 class="mentorname">BioCellection</b></h3>
+	<h4 class="mentorname">2016</h4>
+	<p class="mentorbio">Upcycling plastic pollution into value using chemistry and synthetic biology.</p>
+	</div>
+
+	<div class="mentor col-md-4 col-sm-6">
+	<div class="pastwinnerpic-container">
+	<img class="pastwinnerpic" src="../static/img/bionux-f.jpg">
+	</div>
+	<h3 class="mentorname">BionUX</b></h3>
+	<h4 class="mentorname">2015</h4>
+	<p class="mentorbio">Low-cost prosthesis for above-the-arm amputees with touch sensation.</p>
+	</div>
+
+	<div class="mentor col-md-4 col-sm-6">
+	<div class="pastwinnerpic-container">
+	<img class="pastwinnerpic" src="../static/img/biobots.jpg">
+	</div>
+	<h3 class="mentorname">BioBots/Allevi</b></h3>
+	<h4 class="mentorname">2014</h4>
+	<p class="mentorbio">A novel desktop 3D printer that makes living tissues out of cells.</p>
+	</div>
+
+	<div class="mentor col-md-4 col-sm-6">
+	<div class="pastwinnerpic-container">
+	<img class="pastwinnerpic" src="../static/img/maculens.jpg">
+	</div>
+	<h3 class="mentorname">Maculens</b></h3>
+	<h4 class="mentorname">2013</h4>
+	<p class="mentorbio">A better anti-glare coating for your glasses, devices, and car windshields.</p>
+	</div>
+
+	<div class="mentor col-md-4 col-sm-6">
+	<div class="pastwinnerpic-container">
+	<img class="pastwinnerpic" src="../static/img/kinecthesia.jpg">
+	</div>
+	<h3 class="mentorname">Kinecthesia</b></h3>
+	<h4 class="mentorname">2012</h4>
+	<p class="mentorbio">A Microsoft Kinect-powered haptic belt to help the blind know what's around them.</p>
+	</div>
+
+	<!--<div class="mentor col-md-3 col-sm-6">
+	<div class="pastwinnerpic-container">
+	<img class="pastwinnerpic" src="../static/img/ubeam.png">
+	</div>
+	<h3 class="mentorname">uBeam</b></h3>
+	<h4 class="mentorname">2011</h4>
+	<p class="mentorbio">Infrared-powered wireless energy charging for all your devices.</p>
+	</div>
+	
+	<div class="mentor col-md-3 col-sm-6">
+	<div class="pastwinnerpic-container">
+	<img class="pastwinnerpic" src="../static/img/pv.png">
+	</div>
+	<h3 class="mentorname">PD Solutions</b></h3>
+	<h4 class="mentorname">2010</h4>
+	<p class="mentorbio">A novel Parkinson's disease treatment that is longer lasting and less invasive than current treatments.</p>
+	</div>
+	-->
+	</div>
   </div>
   </section>
 <section id="mentorship" data-type="background" data-speed="10">
@@ -85,46 +183,123 @@
       <h1 class="frontpageheader"> Past Mentors </h1>
       <h4 class="frontpagedesc"> These distinguished mentors have worked to help teams develop their products.</h4>
     </div><!-- .frontpage wrapper #mentors -->
- {% if mentors %}
-    <div class="row">
- {% for mentor in mentors %}
-      <div class="mentor col-md-4 col-sm-4">
-        <div class="mentorpic-container">
-          <img class="mentorpic" src='{{url_for('static', filename=mentor.photo)}}'> </img>
-        </div>
-        <h3 class="mentorname"> {{mentor.name}} </b></h3>
-        <p class="mentorbio"> {{mentor.position}}, {{mentor.organization}} </p>
-      </div>
- {% endfor %}
-    </div><!-- .row -->
- {% endif %}
-  </div><!-- .container mentorship -->
+
+<div class="row">
+<div class="mentor col-md-4 col-sm-4">
+<div class="mentorpic-container">
+<img class="mentorpic" src="../static/img/stein.jpg">
+</div>
+<h3 class="mentorname">Jake Stein</b></h3>
+<p class="mentorbio">CEO, Stitch Data</p>
+</div>
+
+<div class="mentor col-md-4 col-sm-4">
+<div class="mentorpic-container">
+<img class="mentorpic" src="../static/img/matt-owens.jpg">
+</div>
+<h3 class="mentorname">Matt Owens</b></h3>
+<p class="mentorbio">Advisor, Harlem Biospace</p>
+</div>
+
+<div class="mentor col-md-4 col-sm-4">
+<div class="mentorpic-container">
+<img class="mentorpic" src="../static/img/pitkin.jpg">
+</div>
+<h3 class="mentorname">Emil Pitkin</b></h3>
+<p class="mentorbio">CEO, GovPredict</p>
+</div>
+
+<div class="mentor col-md-4 col-sm-4">
+<div class="mentorpic-container">
+<img class="mentorpic" src="../static/img/bressler.jpg">
+</div>
+<h3 class="mentorname">Peter Bressler</b></h3>
+<p class="mentorbio">Founder, Bresslergroup</p>
+</div>
+
+<div class="mentor col-md-4 col-sm-4">
+<div class="mentorpic-container">
+<img class="mentorpic" src="../static/img/babin.jpg">
+</div>
+<h3 class="mentorname">Jeffrey Babin</b></h3>
+<p class="mentorbio">MEAM Professor, Penn</p>
+</div>
+
+<div class="mentor col-md-4 col-sm-4">
+<div class="mentorpic-container">
+<img class="mentorpic" src="../static/img/barry.jpg">
+</div>
+<h3 class="mentorname">Barry Silverman</b></h3>
+<p class="mentorbio">ESE Professor, Penn</p>
+</div>
+
+</div>
+</div><!-- .container mentorship -->
 </section> 
 
 <section id="sponsors" data-type="background" data-speed="10">
   <div class="container">
     <div class="frontpagewrapper">
-      <h1 class="frontpageheader"> Sponsors </h1>
-      <h4 class="frontpagedesc"> Over $20,000 in cash and development prizes, courtesy of our incredible sponsors. Want to see your company's logo below? Check out our sponsorship program.</h4>
+      <h1 class="frontpageheader"> Past Sponsors </h1>
+      <h4 class="frontpagedesc"> Over $20,000 in cash and development prizes, courtesy of our incredible sponsors. Want to see your company's logo below? Shoot us an email at <a href="mailto:pennvention@gmail.com">pennvention@gmail.com</a> and let's talk!</h4>
     </div><!-- .frontpage wrapper #mentors -->
-   
-	{% for sponsor in sponsors %}
-	 {% if sponsor.id == 1 or sponsor.id == 3 or sponsor.id == 6 %}	
-	  <div class="row">
-	 {% endif %}
-	 	{% if sponsor.id == 1 %}
-		 <div class="sponsor col-md-4 col-sm-4 col-md-offset-2 col-sm-offset-2">
-		{% else %}
-		 <div class="sponsor col-md-4 col-sm-4">
-		{% endif %}
-			<div class="sponsorpic-container">
-				<img class="sponsorpic" src='{{url_for('static',filename=sponsor.photo)}}'></img>
-			</div>
-		</div>
-	{% if sponsor.id == 2 or sponsor.id == 5 or sponsor.id == 8 %}
-	 </div>
-	{% endif %}
-	{% endfor %}
+<div class="row">
+
+<div class="sponsor col-md-4 col-sm-4">
+<div class="sponsorpic-container">
+<img class="sponsorpic" src="../static/img/sponsors/dreamit.jpg"></img>
+</div>
+</div>
+
+<div class="sponsor col-md-4 col-sm-4">
+<div class="sponsorpic-container">
+<img class="sponsorpic" src="../static/img/sponsors/red-blue-ventures-trans.png"></img>
+</div>
+</div>
+
+<div class="sponsor col-md-4 col-sm-4">
+<div class="sponsorpic-container">
+<img class="sponsorpic" src="../static/img/sponsors/weber-law.png"></img>
+</div>
+</div>
+
+<div class="sponsor col-md-4 col-sm-4">
+<div class="sponsorpic-container">
+<img class="sponsorpic" src="../static/img/sponsors/stitch.png"></img>
+</div>
+</div>
+
+<div class="sponsor col-md-4 col-sm-4">
+<div class="sponsorpic-container">
+<img class="sponsorpic" src="../static/img/sponsors/integra.png"></img>
+</div>
+</div>
+
+<div class="sponsor col-md-4 col-sm-4">
+<div class="sponsorpic-container">
+<img class="sponsorpic" src="../static/img/sponsors/arcweb.png"></img>
+</div>
+</div>
+
+<div class="sponsor col-md-4 col-sm-4">
+<div class="sponsorpic-container">
+<img class="sponsorpic" src="../static/img/sponsors/venturef0rth.jpg"></img>
+</div>
+</div>
+
+<div class="sponsor col-md-4 col-sm-4">
+<div class="sponsorpic-container">
+<img class="sponsorpic" src="../static/img/sponsors/csis-logo.jpg"></img>
+</div>
+</div>
+
+<div class="sponsor col-md-4 col-sm-4">
+<div class="sponsorpic-container">
+<img class="sponsorpic" src="../static/img/sponsors/Weiss-Tech-House.png"></img>
+</div>
+</div>
+
+</div>   
  </div>
 </section>
 
@@ -146,7 +321,7 @@
                         </li>
                     </ul>
                     <hr class="small">
-                    <p class="text-muted">Copyright &copy; Pennvention 2017</p>
+                    <p class="text-muted">Copyright &copy; Pennvention 2018</p>
                 </div>
             </div>
         </div>
